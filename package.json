@@ -1,0 +1,33 @@
+{
+  "name": "AnyFin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node index.ts -e js,ts,graphql",
+    "build": "tsc",
+    "start": "cd dist && node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.8",
+    "@types/helmet": "^4.0.0",
+    "@types/morgan": "^1.9.1",
+    "@types/node": "^14.14.2",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "graphql-tools": "^7.0.0",
+    "graphql-yoga": "^1.18.3",
+    "helmet": "^4.1.1",
+    "merge-graphql-schemas": "^1.7.8",
+    "morgan": "^1.10.0"
+  }
+}
