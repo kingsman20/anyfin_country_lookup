@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec ts-node index.ts -e js,ts,graphql",
-    "build": "tsc",
+    "build": "rm -rf dist && tsc && cd src && cp ./api/**/**/*.graphql ../dist/src/api",
     "start": "cd dist && node ."
   },
   "keywords": [],
