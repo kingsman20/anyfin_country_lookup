@@ -1,0 +1,21 @@
+type Query {
+  countries(name: String): [Country!]!
+  sayHello: String!
+}
+
+type Country {
+  id: ID!
+  name: String!
+  population: Int!
+  currencies: [Currency!]!
+}
+
+type Currency {
+  base: String!
+  date: String!
+  rates: [Rate!]!
+}
+
+type Rate {
+  SEK: String!
+}

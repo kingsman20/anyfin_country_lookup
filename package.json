@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pretypes": "gql-merge --out-file ./src/schema.grahql ./src/api/**/*.graphql",
+    "types": "graphql-to-typescript ./src/schema.grahql ./src/types/graph.d.ts",
     "dev": "nodemon --exec ts-node index.ts -e js,ts,graphql",
-    "build": "rm -rf dist && tsc && cd src && cp ./api/**/**/*.graphql ../dist/src/api",
+    "build": "rm -rf dist && tsc && cd src && cp ./api/**/*.graphql ../dist/src/api",
     "start": "cd dist && node ."
   },
   "keywords": [],
@@ -16,6 +18,9 @@
     "@types/helmet": "^4.0.0",
     "@types/morgan": "^1.9.1",
     "@types/node": "^14.14.2",
+    "babel-runtime": "^6.26.0",
+    "gql-merge": "0.0.6",
+    "graphql-to-typescript": "^0.1.2",
     "nodemon": "^2.0.6",
     "ts-node": "^9.0.0",
     "tslint-config-prettier": "^1.18.0",
