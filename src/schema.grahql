@@ -4,7 +4,6 @@ type Query {
 }
 
 type Country {
-  id: ID!
   name: String!
   population: Int!
   currencies: [Currency!]!
@@ -18,4 +17,14 @@ type Currency {
 
 type Rate {
   SEK: String!
+}
+
+type User {
+  id: ID!
+  email: String!
+  token: String!
+}
+
+type Mutation {
+  LoginUser(email: String!, password: String!): User!
 }

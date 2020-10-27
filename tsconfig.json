@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "rootDir": "./",
     "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noImplicitThis": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
@@ -19,7 +19,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
   },
   "exclude": [
     "node_modules",

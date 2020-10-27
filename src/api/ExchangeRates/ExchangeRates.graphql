@@ -3,7 +3,6 @@ type Query {
 }
 
 type Country {
-  id: ID!
   name: String!
   population: Int!
   currencies: [Currency!]!

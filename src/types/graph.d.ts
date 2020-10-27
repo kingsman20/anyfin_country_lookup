@@ -1,4 +1,4 @@
-export const typeDefs = ["type Query {\n  countries(name: String): [Country!]!\n  sayHello: String!\n}\n\ntype Country {\n  id: ID!\n  name: String!\n  population: Int!\n  currencies: [Currency!]!\n}\n\ntype Currency {\n  base: String!\n  date: String!\n  rates: [Rate!]!\n}\n\ntype Rate {\n  SEK: String!\n}\n"];
+export const typeDefs = ["type Query {\n  countries(name: String): [Country!]!\n  sayHello: String!\n}\n\ntype Country {\n  name: String!\n  population: Int!\n  currencies: [Currency!]!\n}\n\ntype Currency {\n  base: String!\n  date: String!\n  rates: [Rate!]!\n}\n\ntype Rate {\n  SEK: String!\n}\n\ntype User {\n  id: ID!\n  email: String!\n  token: String!\n}\n\ntype Mutation {\n  LoginUser(email: String!, password: String!): User!\n}\n"];
 /* tslint:disable */
 
 export interface Query {
@@ -11,7 +11,6 @@ export interface CountriesQueryArgs {
 }
 
 export interface Country {
-  id: string;
   name: string;
   population: number;
   currencies: Array<Currency>;
@@ -25,4 +24,19 @@ export interface Currency {
 
 export interface Rate {
   SEK: string;
+}
+
+export interface Mutation {
+  LoginUser: User;
+}
+
+export interface LoginUserMutationArgs {
+  email: string;
+  password: string;
+}
+
+export interface User {
+  id: string;
+  email: string;
+  token: string;
 }
