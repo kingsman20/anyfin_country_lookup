@@ -1,6 +1,5 @@
 type Query {
   countries(name: String): [Country!]!
-  sayHello: String!
 }
 
 type Country {
