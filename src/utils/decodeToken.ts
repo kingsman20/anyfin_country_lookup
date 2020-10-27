@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import * as jwt from 'jsonwebtoken';
-// dotenv.config(); 
-dotenv.config({ path: "../.env" });
+dotenv.config(); 
+// dotenv.config({ path: "../.env" }); 
 
 async function decodeToken(token: string) {
   if (token) {
