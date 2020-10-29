@@ -1,4 +1,4 @@
-export const typeDefs = ["type Query {\n  countries(name: String): [Country!]!\n}\n\ntype Country {\n  name: String!\n  population: Int!\n  currencies: [Currency!]!\n}\n\ntype Currency {\n  base: String!\n  date: String!\n  rates: [Rate!]!\n}\n\ntype Rate {\n  SEK: String!\n}\n\ntype User {\n  id: ID!\n  email: String!\n  token: String!\n}\n\ntype Mutation {\n  LoginUser(email: String!, password: String!): User!\n}\n"];
+export const typeDefs = ["type Query {\n  countries(code: String): [Country!]!\n}\n\ntype Country {\n  name: String!\n  population: Int!\n  flag: String!\n  alpha2Code: String!\n}\n\ntype Currency {\n  base: String!\n  date: String!\n  rates: [Rate!]!\n}\n\ntype Rate {\n  SEK: String!\n}\n\ntype User {\n  id: ID!\n  email: String!\n  token: String!\n}\n\ntype Mutation {\n  LoginUser(email: String!, password: String!): User!\n}\n"];
 /* tslint:disable */
 
 export interface Query {
@@ -6,23 +6,14 @@ export interface Query {
 }
 
 export interface CountriesQueryArgs {
-  name: string | null;
+  code: string | null;
 }
 
 export interface Country {
   name: string;
   population: number;
-  currencies: Array<Currency>;
-}
-
-export interface Currency {
-  base: string;
-  date: string;
-  rates: Array<Rate>;
-}
-
-export interface Rate {
-  SEK: string;
+  flag: string;
+  alpha2Code: string;
 }
 
 export interface Mutation {
@@ -38,4 +29,14 @@ export interface User {
   id: string;
   email: string;
   token: string;
+}
+
+export interface Currency {
+  base: string;
+  date: string;
+  rates: Array<Rate>;
+}
+
+export interface Rate {
+  SEK: string;
 }

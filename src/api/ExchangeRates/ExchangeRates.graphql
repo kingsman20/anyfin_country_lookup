@@ -1,11 +1,12 @@
 type Query {
-  countries(name: String): [Country!]!
+  countries(code: String): [Country!]!
 }
 
 type Country {
   name: String!
   population: Int!
-  currencies: [Currency!]!
+  flag: String!
+  alpha2Code: String!
 }
 
 type Currency {

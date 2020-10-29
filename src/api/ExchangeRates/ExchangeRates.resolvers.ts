@@ -8,15 +8,9 @@ const resolvers = {
   Query: {
     countries: privateResolver(
       async (_, args: CountriesQueryArgs): Promise<[Country]> => {
-        const { name } = args;
-        const response = await fetch(`${countryBaseURL}/name/${name}`);
+        const { code } = args;
+        const response = await fetch(`${countryBaseURL}/alpha?codes=${code}`);
         const responseData = await response.json();
-        //   console.log('responseData ', responseData);
-
-        responseData.forEach((element) => {
-          // console.log(element);
-        });
-
         return responseData;
       }
     ),
