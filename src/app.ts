@@ -13,6 +13,10 @@ class App {
       context: (req) => {
         return {
           req: req.request,
+          tokenStr:
+            req.request.headers && req.request.headers.authorization
+              ? req.request.headers.authorization
+              : '', // for token based rate limit
         };
       },
     });
