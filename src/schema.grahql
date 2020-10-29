@@ -1,5 +1,6 @@
 type Query {
   countries(code: String): [Country!]!
+  currencies(symbols: String): Currency!
 }
 
 type Country {
@@ -11,12 +12,11 @@ type Country {
 
 type Currency {
   base: String!
-  date: String!
-  rates: [Rate!]!
+  rates: Rate!
 }
 
 type Rate {
-  SEK: String!
+  SEK: String
 }
 
 type User {
